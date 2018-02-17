@@ -17,7 +17,7 @@ Last Login....................: $(last | head -n 2 | tail -n 1 | awk '{print $1"
 $(tput sgr0)"
 for DISK in $(fdisk -l |grep -oP "sd[a-z]" | uniq)
 do
-    echo "$(tput setaf 3)
+echo "$(tput setaf 3)
 Disk $DISK Used Space...........: $(df -h | grep $DISK | awk '{print $5}')
-    $(tput sgr0)"
+$(tput sgr0)"
 done
